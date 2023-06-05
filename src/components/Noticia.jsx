@@ -1,22 +1,22 @@
 import React from 'react';
-import { Card, Button, Col } from 'react-bootstrap';
+import { Card, Button, Col, Row } from 'react-bootstrap';
 
-
-const Noticia = () => {
+const Noticia = ({noticias}) => {
     return (
-        <Col xs={4}>
-            <Card>
-                <Card.Img variant="top" src="https://media.tycsports.com/files/2023/02/10/532928/lionel-messi_1440x810_wmk.webp" />
-                <Card.Body>
-                    <Card.Title>Card Title</Card.Title>
-                    <Card.Text>LoremASJIDGASIDASGHDASUGDASJhsagdhjasgdjhasgdjashdgjasdgasdgjhasgdhjsa</Card.Text>
-                    <hr />
-                    <Button variant="primary">Ver noticia completa</Button>
-                </Card.Body>
-            </Card>
-        </Col>
-
-        
+    <Row className='text-center'>
+            {noticias.map((noticia,indice) => (
+            <Col lg={3} key={indice}>
+                <Card> 
+                    <Card.Img variant="top" src={noticia.image_url} alt="imgNoticia"/>
+                    <Card.Body>
+                        <Card.Title>{noticia.title}</Card.Title>
+                        <Card.Text className="text-truncate">{noticia.description}</Card.Text>
+                        <Button variant="success">Ver noticia completa</Button>
+                    </Card.Body>
+                </Card>
+            </Col>
+            ))}
+    </Row>
     );
 };
 

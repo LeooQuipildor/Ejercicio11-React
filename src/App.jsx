@@ -4,16 +4,20 @@ import Titulo from './components/Titulo'
 import { Container } from 'react-bootstrap';
 import Formulario from './components/Formulario';
 import ListaNoticias from './components/ListaNoticias';
+import { useState, useEffect } from 'react';
+import Noticia from './components/Noticia';
 
 function App() {
+
   return (
     <>
       <Titulo></Titulo>
       <hr />
-      <Container className=''>
-        <Formulario></Formulario>
+      <Container>
+        <Formulario>
+          <ListaNoticias></ListaNoticias>
+        </Formulario>
         <hr />
-        <ListaNoticias></ListaNoticias>
       </Container>
     </>
   )

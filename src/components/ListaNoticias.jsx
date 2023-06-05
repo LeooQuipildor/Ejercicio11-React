@@ -4,12 +4,10 @@ import Col from 'react-bootstrap/Col';
 import Noticia from './Noticia';
 Noticia
 
-const ListaNoticias = () => {
+const ListaNoticias = ({noticias}) => {
     return (
         <Row>
-            <Noticia></Noticia>
-            <Noticia></Noticia>
-            <Noticia></Noticia>
+            <Noticia noticias={noticias}></Noticia>
         </Row>
     );
 };
